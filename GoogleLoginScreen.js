@@ -15,7 +15,7 @@ export default class GoogleLoginScreen extends React.Component {
   signIn = async () => {
     try {
       const result = await Expo.Google.logInAsync({
-        androidClientId: //API AQUI,
+        androidClientId: //API GOOGLE,
         //iosClientId: YOUR_CLIENT_ID_HERE,  <-- if you use iOS
         scopes: ["profile", "email"]
       })
