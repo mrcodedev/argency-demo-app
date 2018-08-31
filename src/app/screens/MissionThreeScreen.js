@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
-export default class MisionOneScreen extends Component {
+export default class MissionThreeScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/fondomision1.png')}
+      source={require('../assets/fondomision3.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >
         <View style={styles.viewEmpezarMision}>
           <TouchableOpacity
             style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('MisionOneElection')}}
+            onPress={() => {this.props.navigation.navigate('MissionThreeElection')}}
           > 
             <Text style={styles.textoEmpezar}>EMPEZAR ></Text>
           </TouchableOpacity>

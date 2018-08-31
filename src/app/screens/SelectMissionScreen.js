@@ -12,21 +12,21 @@ export default class SelectMissionScreen extends Component {
         <View style={styles.viewBotones}>
           <TouchableOpacity
             style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('MisionOne')}}
+            onPress={() => {this.props.navigation.navigate('MissionOne')}}
           > 
             <Text>MISION 1</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('MisionTwo')}}
+            onPress={() => {this.props.navigation.navigate('MissionTwo')}}
           > 
             <Text>MISION 2</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('MisionThree')}}
+            onPress={() => {this.props.navigation.navigate('MissionThree')}}
           > 
             <Text>MISION 3</Text>
           </TouchableOpacity>

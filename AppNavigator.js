@@ -3,16 +3,23 @@ import { createStackNavigator } from 'react-navigation';
 
 import LoginScreen from './src/app/screens/LoginScreen';
 import SelectMissionScreen from './src/app/screens/SelectMissionScreen';
-import MisionOneScreen from './src/app/screens/MisionOneScreen';
-import MisionTwoScreen from './src/app/screens/MisionTwoScreen';
-import MisionThreeScreen from './src/app/screens/MisionThreeScreen';
-import MisionOneElectionScreen from './src/app/screens/MisionOneElectionScreen';
-import MisionTwoElectionScreen from './src/app/screens/MisionTwoElectionScreen';
-import MisionThreeElectionScreen from './src/app/screens/MisionThreeElectionScreen';
-import EndMision from './src/app/screens/EndMision';
+import MissionOneScreen from './src/app/screens/MissionOneScreen';
+import MissionTwoScreen from './src/app/screens/MissionTwoScreen';
+import MissionThreeScreen from './src/app/screens/MissionThreeScreen';
+import MissionOneElectionScreen from './src/app/screens/MissionOneElectionScreen';
+import MissionTwoElectionScreen from './src/app/screens/MissionTwoElectionScreen';
+import MissionThreeElectionScreen from './src/app/screens/MissionThreeElectionScreen';
+import EndMissionScreen from './src/app/screens/EndMissionScreen';
+
+//Settings Google
+import GoogleLoginScreen from './GoogleLoginScreen';
+
 
 
 const AppStackNavigator =  createStackNavigator({
+    GoogleLogin: {
+      screen: GoogleLoginScreen 
+    },
     Login: {
       screen: LoginScreen
     },
@@ -20,25 +27,25 @@ const AppStackNavigator =  createStackNavigator({
       screen: SelectMissionScreen,
     },
     MisionOne: {
-      screen: MisionOneScreen
+      screen: MissionOneScreen
     },
     MisionTwo: {
-      screen: MisionTwoScreen
+      screen: MissionTwoScreen
     },
     MisionThree: {
-      screen: MisionThreeScreen
+      screen: MissionThreeScreen
     },
     MisionOneElection: {
-      screen: MisionOneElectionScreen
+      screen: MissionOneElectionScreen
     },
     MisionTwoElection: {
-      screen: MisionTwoElectionScreen
+      screen: MissionTwoElectionScreen
     },
     MisionThreeElection: {
-      screen: MisionThreeElectionScreen
+      screen: MissionThreeElectionScreen
     },
     EndMision: {
-      screen: EndMision
+      screen: EndMissionScreen
     }
   },
   {

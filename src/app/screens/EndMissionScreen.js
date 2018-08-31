@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
-export default class EndMision extends Component {
+export default class EndMissionScreen extends Component {
   render() {
     return (
       <ImageBackground

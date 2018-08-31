@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
-export default class MisionTwoScreen extends Component {
+export default class MissionTwoScreen extends Component {
   render() {
     return (
       <ImageBackground
@@ -12,7 +12,7 @@ export default class MisionTwoScreen extends Component {
         <View style={styles.viewEmpezarMision}>
           <TouchableOpacity
             style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('MisionTwoElection')}}
+            onPress={() => {this.props.navigation.navigate('MissionTwoElection')}}
           > 
             <Text style={styles.textoEmpezar}>EMPEZAR ></Text>
           </TouchableOpacity>
