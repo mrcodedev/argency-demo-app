@@ -1,7 +1,6 @@
 import React from "react"
 import { StyleSheet, Text, View, Image, Button } from "react-native"
 import Expo from "expo";
-import Config from './src/app/config/config';
 
 export default class GoogleLoginScreen extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ export default class GoogleLoginScreen extends React.Component {
   signIn = async () => {
     try {
       const result = await Expo.Google.logInAsync({
-        androidClientId: //API GOOGLE,
+        //androidClientId: CLIENT_ID',
         //iosClientId: YOUR_CLIENT_ID_HERE,  <-- if you use iOS
         scopes: ["profile", "email"]
       })
@@ -60,7 +59,6 @@ const LoggedInPage = props => {
     <View style={styles.container}>
       <Text style={styles.header}>Welcome:{props.name}</Text>
       <Image style={styles.image} source={{ uri: props.photoUrl }} />
-      <Text style={styles.header}>Welcome:`${Config.loginGoogleAPIAndroid}`</Text>
     </View>
   )
 }
