@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
+import { Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
+
+//Importing styles
+import { styles } from './SelectMissionScreen.style';
 
 export default class SelectMissionScreen extends Component {
   render() {
     return (
       <ImageBackground
-        source={require('../assets/fondomisiones.png')}
+        source={require('../../../assets/fondomisiones.png')}
         style={{flex:1}}
         resizeMode={'cover'}    
       >
@@ -35,21 +38,3 @@ export default class SelectMissionScreen extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  viewBotones: {
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  botonMision: {
-    width: 100,
-    backgroundColor: '#FFF',
-    width: 200,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 25
-  },
-});

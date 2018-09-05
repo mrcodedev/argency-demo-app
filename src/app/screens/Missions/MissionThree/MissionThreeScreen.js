@@ -5,7 +5,7 @@ export default class MissionThreeScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/fondomision3.png')}
+      source={require('../../../assets/fondomision3.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >

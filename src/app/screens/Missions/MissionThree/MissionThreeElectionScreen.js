@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
-export default class MissionOneElectionScreen extends Component {
+export default class MissionThreeElectionScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/mision1elections.png')}
+      source={require('../../../assets/mision3elections.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >

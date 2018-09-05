@@ -5,7 +5,7 @@ export default class MissionTwoScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/fondomision2.png')}
+      source={require('../../../assets/fondomision2.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >

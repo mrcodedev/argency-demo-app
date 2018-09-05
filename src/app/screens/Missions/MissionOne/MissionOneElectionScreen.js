@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
-export default class MissionTwoElectionScreen extends Component {
+export default class MissionOneElectionScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/mision2elections.png')}
+      source={require('../../../assets/mision1elections.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >
@@ -14,7 +14,7 @@ export default class MissionTwoElectionScreen extends Component {
             style={styles.botonMision}
             onPress={() => {this.props.navigation.navigate('EndMission')}}
           > 
-            <Text>Visitar Behavioral Network Systems</Text>
+            <Text>Visitar laboratorio BNSystems</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -28,7 +28,7 @@ export default class MissionTwoElectionScreen extends Component {
             style={styles.botonMision}
             onPress={() => {this.props.navigation.navigate('EndMission')}}
           > 
-            <Text>Entrevista con el CEO de Behavioral Network Systems</Text>
+            <Text>Entrevista con el CEO de BNSystems</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

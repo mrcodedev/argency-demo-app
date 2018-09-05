@@ -5,7 +5,7 @@ export default class EndMissionScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/fin.png')}
+      source={require('../../../assets/fin.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >

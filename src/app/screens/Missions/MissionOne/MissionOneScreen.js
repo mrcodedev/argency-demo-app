@@ -5,7 +5,7 @@ export default class MissionOneScreen extends Component {
   render() {
     return (
       <ImageBackground
-      source={require('../assets/fondomision1.png')}
+      source={require('../../../assets/fondomision1.png')}
       style={{flex:1}}
       resizeMode={'cover'}    
       >
