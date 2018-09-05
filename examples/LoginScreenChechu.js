@@ -38,12 +38,12 @@ import { View, Text, ImageBackground, TouchableOpacity, Image } from 'react-nati
 import Expo from 'expo';
 
 //Importing styles
-import { styles } from './LoginScreen.style';
+import { styles } from '../src/app/screens/Login/LoginScreen.style';
 
 //Importing SelfComponents
 
 //Config
-let envConfig = require('../../../../config.js');
+let envConfig = require('../config');
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -78,7 +78,6 @@ export default class LoginScreen extends Component {
       }
       Promise.resolve(true)
     } catch (e) {
-      console.log(e);
       Promise.reject(e)      
     }
   }
