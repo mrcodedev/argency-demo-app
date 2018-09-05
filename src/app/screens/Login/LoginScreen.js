@@ -17,15 +17,17 @@
   DONE:
   + Put the Google icon in the start button
   + Splash screen for Android and iOS
+  + Delete of npm react-google-button
+  + Delete of npm react-native-smart-splash-screen
+  + Delete of npm react-native-google-signin
+  + Create config.js to global variables enviroment
 
   -------------------------------
   FIXME: 
   - https://youtu.be/lvY150aX5PM (para pasar el navigation al componente EJEMPLO: <Header navigation={this.props.navigation})
   - Refactorizar LoginScreen.js para quitar las vistas que no hacen falta
-  - Borrar react-native-google-signin del npm
   - Ver documentación SocialIcon react-native-elements
-  - Borrar de npm react-google-button
-  - Borrar de npm react-native-smart-splash-screen
+
   -------------------------------
   DUDAS:
   - El sistema de logeo ¿sólo Google?. ¿Cómo va a saber nuestra base de datos que tiene acceso?
@@ -38,8 +40,11 @@ import Expo from 'expo';
 //Importing styles
 import { styles } from './LoginScreen.style';
 
-
 //Importing SelfComponents
+
+//Config
+let envConfig = require('../../../../config.js');
+
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props)
@@ -57,9 +62,7 @@ export default class LoginScreen extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({splashStatus: true})
-    }, 3000);
+
   }
 
   signIn = async () => {
@@ -80,7 +83,7 @@ export default class LoginScreen extends Component {
   signInGoogle = async () => {
     try {
       const result = await Expo.Google.logInAsync({
-        androidClientId: 'YOUR_ID',
+        androidClientId: envConfig.androidClientID,
         //iosClientId: YOUR_CLIENT_ID_HERE,  <-- if you use iOS
         scopes: ["profile", "email"]
       })
@@ -103,10 +106,11 @@ export default class LoginScreen extends Component {
 
   isPermissionArgency = async() => {
     const emailArgency = this.state.userEmail;
-    const URL = `URL ARGENCY`;
+    const URL = envConfig.argencyServerURL;
+    const urlAPIAction = 'login?username=';
 
     try {
-      let response = await fetch(`${URL}${emailArgency}`);
+      let response = await fetch(`${URL}${urlAPIAction}${emailArgency}`);
         if(response.status == 200) {
           const datos = await response.json();
           this.setState({
