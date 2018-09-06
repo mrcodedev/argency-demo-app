@@ -19,14 +19,14 @@ export default class EndMissionScreen extends Component {
 
 const styles = StyleSheet.create({
   viewEmpezarMision: {
-    flex: 1,
-    width: 300,
-    alignItems: 'center',
-    justifyContent: 'center',
+      flex: 1,
+      width: 300,
+      alignItems: 'center',
+      justifyContent: 'center',
   },
   textoFin: {
-    color: 'white',
-    fontWeight: '700',
-    fontSize: 30,
+      color: 'white',
+      fontWeight: '700',
+      fontSize: 30,
   }
 });

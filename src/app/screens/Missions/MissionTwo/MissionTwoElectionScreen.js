@@ -9,7 +9,7 @@ export default class MissionTwoElectionScreen extends Component {
       style={{flex:1}}
       resizeMode={'cover'}    
       >
-       <View style={styles.viewBotones}>
+      <View style={styles.viewBotones}>
           <TouchableOpacity
             style={styles.botonMision}
             onPress={() => {this.props.navigation.navigate('EndMission')}}

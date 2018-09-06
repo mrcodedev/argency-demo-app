@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
-
-//Importing styles
-import { styles } from './SelectMissionScreen.style';
+import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default class SelectMissionScreen extends Component {
   render() {
@@ -38,3 +35,21 @@ export default class SelectMissionScreen extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  viewBotones: {
+    flex: 1,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  botonMision: {
+    width: 100,
+    backgroundColor: '#FFF',
+    width: 200,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 25
+  },
+});
