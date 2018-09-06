@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, DrawerNavigator } from 'react-navigation';
 
 //Login Screen Start
 import LoginScreen from '../screens/Login/LoginScreen';
@@ -25,7 +25,7 @@ import EndMissionScreen from '../screens/Missions/EndMission/EndMissionScreen';
 import GoogleLoginScreen from '../../../examples/GoogleLoginScreen';
 
 
-const AppStackNavigator =  createStackNavigator({
+const AppNavigator =  createStackNavigator({
     Login: {
       screen: LoginScreen
     },
@@ -64,4 +64,4 @@ const AppStackNavigator =  createStackNavigator({
     }
   },);
 
-export default AppStackNavigator;
+export default AppNavigator;

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 //Importing routes
-import AppStackNavigator from './src/app/navigation/AppNavigator';
+import AppNavigator from './src/app/navigation/AppNavigator';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <AppStackNavigator />
+      <AppNavigator />
     );
   }
 }
