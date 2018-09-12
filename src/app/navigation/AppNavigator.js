@@ -21,16 +21,10 @@ import MissionThreeElectionScreen from '../screens/Missions/MissionThree/Mission
 //End Mission
 import EndMissionScreen from '../screens/Missions/EndMission/EndMissionScreen';
 
-//Settings Google
-import GoogleLoginScreen from '../../../examples/GoogleLoginScreen';
-
 
 const AppNavigator =  createStackNavigator({
     Login: {
       screen: LoginScreen
-    },
-    GoogleLogin: {
-      screen: GoogleLoginScreen 
     },
     SelectMission: {
       screen: SelectMissionScreen,

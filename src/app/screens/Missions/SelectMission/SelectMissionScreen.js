@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default class SelectMissionScreen extends Component {
+
   render() {
+    console.log(this.props);
     return (
       <ImageBackground
         source={require('../../../assets/fondomisiones.png')}
