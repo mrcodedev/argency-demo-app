@@ -21,34 +21,14 @@ import MissionThreeElectionScreen from '../screens/Missions/MissionThree/Mission
 //End Mission
 import EndMissionScreen from '../screens/Missions/EndMission/EndMissionScreen';
 
+import Prueba from '../navigation/AppDrawerNavigator';
 
 const AppNavigator =  createStackNavigator({
     Login: {
       screen: LoginScreen
     },
     SelectMission: {
-      screen: SelectMissionScreen,
-    },
-    MissionOne: {
-      screen: MissionOneScreen
-    },
-    MissionTwo: {
-      screen: MissionTwoScreen
-    },
-    MissionThree: {
-      screen: MissionThreeScreen
-    },
-    MissionOneElection: {
-      screen: MissionOneElectionScreen
-    },
-    MissionTwoElection: {
-      screen: MissionTwoElectionScreen
-    },
-    MissionThreeElection: {
-      screen: MissionThreeElectionScreen
-    },
-    EndMission: {
-      screen: EndMissionScreen
+      screen: Prueba,
     }
   },
   {
@@ -56,6 +36,7 @@ const AppNavigator =  createStackNavigator({
     navigationOptions: {
       headerVisible: false,
     }
-  },);
+  },
+  );
 
 export default AppNavigator;
