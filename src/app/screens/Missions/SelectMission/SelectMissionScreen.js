@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity, AsyncStorage } from 'react-native';
 
 export default class SelectMissionScreen extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <ImageBackground
@@ -9,6 +13,7 @@ export default class SelectMissionScreen extends Component {
         style={{flex:1}}
         resizeMode={'cover'}    
       >
+
         <View style={styles.viewBotones}>
           <TouchableOpacity
             style={styles.botonMision}

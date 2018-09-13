@@ -36,6 +36,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ImageBackground, TouchableOpacity, Image, Alert } from 'react-native';
 import Expo from 'expo';
+import { AsyncStorage } from 'react-native';
 
 //Config
 let envConfig = require('../../../../config');
@@ -48,6 +49,9 @@ export default class LoginScreen extends Component {
       googleName: '',
       googlePhotoUrl: '',
       googleUserEmail: '',
+      googleId: '',
+      googleToken: '',
+      googleserverAuthCode: '',
       argencySignedIn: false,
       argencyId: '',
       argencyDtStart: '',
@@ -56,12 +60,23 @@ export default class LoginScreen extends Component {
     }
   }
 
+  saveData = async () => {
+    try{
+      let saveTheData = JSON.stringify(this.state);
+      await AsyncStorage.setItem('dataLogin', saveTheData);
+    }
+    catch(error) {
+      console.log(`Error Async: ${error}`);
+    }
+  }
+
   signIn = async () => {
     Promise.all([this.signInGoogle(), this.isPermissionArgency()]).then(() => {
       if(this.state.googleSignedIn && this.state.argencySignedIn && this.state.getPassApp) {
         this.props.navigation.navigate('SelectMission')
+        this.saveData();
+
       }else{
-        let hola = 'Esto es una variable'
         Alert.alert(
           'LOGIN ERROR',
           this.errorControlLogin(),
@@ -82,13 +97,16 @@ export default class LoginScreen extends Component {
         //iosClientId: YOUR_CLIENT_ID_HERE,  <-- if you use iOS
         scopes: ["profile", "email"]
       })
-      
+
       if (result.type === "success") {
         this.setState({
           googleSignedIn: true,
-          googleName: result.user.googleName,
-          googlePhotoUrl: result.user.googlePhotoUrl,
-          googleUserEmail: result.user.email
+          googleName: result.user.name,
+          googlePhotoUrl: result.user.photoUrl,
+          googleUserEmail: result.user.email,
+          googleId: result.user.id,
+          googleToken: result.refreshToken,
+          googleserverAuthCode: result.serverAuthCode,
         })
 
       } else {
@@ -111,8 +129,8 @@ export default class LoginScreen extends Component {
           this.setState({
             argencySignedIn: true,
             argencyId: datos.id,
-            argencyDtStart: datos.argencyDtStart,
-            argencyDtLastAction: datos.argencyDtLastAction
+            argencyDtStart: datos.dtStart,
+            argencyDtLastAction: datos.dtLastAction
           });
         }else{
           console.log(`ERROR - Status: ${response.status}, OK: ${response.ok}, Status Text: ${response.statusText}`);
