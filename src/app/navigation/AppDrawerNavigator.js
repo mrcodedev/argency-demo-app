@@ -70,6 +70,7 @@ const AppDrawerNavigator =  createDrawerNavigator ({
     },
     Login: {
         screen: LoginScreen,
+        //LOCK THE DRAWER MENU
         navigationOptions: ({navigation}) => ({
             drawerLockMode: 'locked-closed'
         })
