@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';
 
 //Styles
-import misionStyle from '../../../styles/Missions/MissionNumScreen.style';
+import misionStyle from '../../../styles/views/Missions/MissionNumScreen';
 
 //Button Drawer
 import ButtonDrawer from '../../../components/openButtonDrawer/openButtonDrawer';

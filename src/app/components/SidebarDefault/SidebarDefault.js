@@ -35,6 +35,11 @@ class SidebarDefault extends Component {
         }
     }
 
+    logOut = () => {
+        console.log('TOY FUERA :D LOGUT');
+        this.props.navigation.navigate('LogOut')
+    }
+
     componentWillMount() {
         this.loadData();
     }
@@ -44,27 +49,38 @@ class SidebarDefault extends Component {
             {
                 title: 'Datos usuario',
                 route: 'Profile',
+                isRoute: 1
             },
             {
                 title: 'Pistas Misión',
                 route: 'Pistas',
+                isRoute: 1
             },
             {
                 title: 'Lista Misiones',
                 route: 'SelectMission',
+                isRoute: 1
             },
             {
                 title: 'Misión 1',
                 route: 'MissionOne',
+                isRoute: 1
             },
             {
                 title: 'Misión 2',
                 route: 'MissionTwo',
+                isRoute: 1
             },
             {
                 title: 'Misión 3',
                 route: 'MissionThree',
+                isRoute: 1
             },
+            {
+                title: 'LogOut',
+                route: this.logOut,
+                isRoute: 0
+            }
         ];
 
         return (
@@ -90,7 +106,7 @@ class SidebarDefault extends Component {
                     {
                         routes.map((section, indexSection) => (
                             <TouchableOpacity 
-                                onPress={() => {this.props.navigation.navigate(section.route)}}
+                                onPress={section.isRoute == 0 ? section.route : () => {this.props.navigation.navigate(section.route)}}
                                 style={styles.link}
                                 key={indexSection}
                             >

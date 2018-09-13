@@ -1,17 +1,6 @@
 /*
   TODO:
 
-  - Do components for login
-  - See how to validate all the time if there is connection of everything (general flag?!?!?!)
-  - See how add drop-down on the left
-    + Insert photo of Google user with the googleName
-    + See profile in the bar on the left
-      + Show photo
-      + Show username
-      + Show email
-    + Access the missions
-    + ¿Logout Google?
-
   -----------------------------------
   DONE:
   + Put the Google icon in the start button
@@ -21,12 +10,22 @@
   + Delete of npm react-native-google-signin
   + Create config.js to global variables enviroment
   + Finish the Login of Google and Argency (error validation topic)
+  + Do components for login
+  + See how to validate all the time if there is connection of everything (general flag?!?!?!)
+  + See how add drop-down on the left
+    + Insert photo of Google user with the googleName
+    + See profile in the bar on the left
+      + Show photo
+      + Show username
+      + Show email
+    + Access the missions
+    + ¿Logout Google?
+  + https://youtu.be/lvY150aX5PM (to pass the navigation to the component EXAMPLE: <Header navigation={this.props.navigation})
+  + Refactor LoginScreen.js Rrmove the views that are not necessary
+  + See documentation of SocialIcon react-native-elements
 
   -------------------------------
   FIXME: 
-  - https://youtu.be/lvY150aX5PM (to pass the navigation to the component EXAMPLE: <Header navigation={this.props.navigation})
-  - Refactor LoginScreen.js Rrmove the views that are not necessary
-  - See documentation of SocialIcon react-native-elements
 
   -------------------------------
   DUDAS:

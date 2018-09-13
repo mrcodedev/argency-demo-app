@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
 
 //Import Styles
-import misionStyle from '../../../styles/Missions/MissionNumElectionScreen.style';
+import misionStyle from '../../../styles/views/Missions/MissionNumElectionScreen';
 
 //Import Button Election Mission
 import ElectionButtonMission from '../../../components/electionButtonMission/electionButtonMission';

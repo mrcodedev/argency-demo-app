@@ -6,7 +6,7 @@ import {
 } from "react-native";
 
 //Styles
-import misionStyle from '../../styles/Missions/SelectMissionScreen.style';
+import misionStyle from '../../styles/views/Missions/SelectMissionScreen';
 
 export class SelectMissionButton extends Component {
     render() {

@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
+
+import AppNavigatorDefault from '../navigation/AppNavigator';
 
 //Select Screen Missions
 import SelectMissionScreen from '../screens/Missions/SelectMission/SelectMissionScreen';
@@ -15,18 +17,21 @@ import PistasScreen from '../screens/Pistas/PistasScreen';
 import MissionOneScreen from '../screens/Missions/MissionOne/MissionOneScreen';
 import MissionOneElectionScreen from '../screens/Missions/MissionOne/MissionOneElectionScreen';
 
-// //Mission Two
+//Mission Two
 import MissionTwoScreen from '../screens/Missions/MissionTwo/MissionTwoScreen';
 import MissionTwoElectionScreen from '../screens/Missions/MissionTwo/MissionTwoElectionScreen';
 
-// //Mission Three
+//Mission Three
 import MissionThreeScreen from '../screens/Missions/MissionThree/MissionThreeScreen';
 import MissionThreeElectionScreen from '../screens/Missions/MissionThree/MissionThreeElectionScreen';
 
 //End Mission
 import EndMissionScreen from '../screens/Missions/EndMission/EndMissionScreen';
 
-//
+//Login Screen
+import LoginScreen from '../screens/Login/LoginScreen';
+
+//Sidebar App
 import Sidebar from '../components/SidebarDefault/SidebarDefault';
 
 const AppDrawerNavigator =  createDrawerNavigator ({
@@ -63,7 +68,6 @@ const AppDrawerNavigator =  createDrawerNavigator ({
     EndMission: {
         screen: EndMissionScreen
     }
-
 },
 {
     initialRouteName: 'SelectMission',

@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation';
 
 import LoginScreen from '../screens/Login/LoginScreen';
 
-import DrawerNavigatorDefault from '../navigation/AppDrawerNavigator';
+import DrawerNavigatorDefault from './AppDrawerNavigator';
 
 const AppNavigator =  createStackNavigator({
     Login: {
@@ -20,6 +20,6 @@ const AppNavigator =  createStackNavigator({
     // initialRouteName: 'SelectMission',
     initialRouteName: 'Login',
   },
-  );
+);
 
 export default AppNavigator;

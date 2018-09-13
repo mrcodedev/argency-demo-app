@@ -6,7 +6,7 @@ import {
 } from "react-native";
 
 //Styles
-import misionStyle from '../../styles/Missions/MissionNumElectionScreen.style';
+import misionStyle from '../../styles/views/Missions/MissionNumElectionScreen';
 
 export class ElectionButtonMission extends Component {
     render() {
