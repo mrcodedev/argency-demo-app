@@ -68,24 +68,24 @@ class SidebarDefault extends Component {
         ];
 
         return (
-            <SafeAreaView style={{flex:1}}>
-                <View style={{height: 220, backgroundColor: 'yellow'}}>
+            <SafeAreaView style={styles.safeAreaContainer}>
+                <View style={styles.profileArea}>
                     <View
-                        style={{ height: 150, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center' }}
+                        style={styles.profilePhotoArea}
                     >
                         <Image
                             source={{uri: this.state.dataLogin.googlePhotoUrl}} 
-                            style={{height: 100, width:100, borderRadius: 60}}
+                            style={styles.profilePhoto}
                         />
                     </View>
                     <View
-                        style={{height: 25, backgroundColor: 'blue', alignItems: 'center', justifyContent: 'center'}}
+                        style={styles.usernameArea}
                     >
                         <Text>{this.state.dataLogin.googleName}</Text>
                     </View>
                 </View>
                 <View
-                    style={{height: 400, backgroundColor: 'green'}}
+                    style={styles.butonSectionArea}
                 >
                     {
                         routes.map((section, indexSection) => (
@@ -106,20 +106,33 @@ class SidebarDefault extends Component {
 export default SidebarDefault;
 
 const styles = StyleSheet.create({
-    container: {
+    safeAreaContainer: {
         flex: 1,
+    },
+    profileArea: {
+        height: 220, 
+        backgroundColor: 'yellow'
+    },
+    profilePhotoArea: {
+        height: 150,
+        backgroundColor: 'red',
         alignItems: 'center',
-        justifyContent: 'flex-start'
+        justifyContent: 'center'
     },
-    imageAvatar: {
-        width: 66,
-        height: 66,
-        marginTop: 40
+    profilePhoto: {
+        height: 100,
+        width:100,
+        borderRadius: 60
     },
-    textName: {
-        padding: 15,
-        fontSize: 18,
-        
+    usernameArea: {
+        height: 25,
+        backgroundColor: 'blue',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    butonSectionArea: {
+        height: 400,
+        backgroundColor: 'green'
     },
     link: {
         padding: 15,
