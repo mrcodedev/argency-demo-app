@@ -1,54 +1,51 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
+
+//Import Styles
+import misionStyle from '../../../styles/views/Missions/MissionNumElectionScreen';
+
+//Import Button Election Mission
+import ElectionButtonMission from '../../../components/electionButtonMission/electionButtonMission';
+
+//Button Drawer
+import ButtonDrawer from '../../../components/openButtonDrawer/openButtonDrawer';
 
 export default class MissionOneElectionScreen extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
+    const routes = [
+      {
+          title: 'Visitar laboratorio BNSystems',
+          route: 'EndMission',
+      },
+      {
+        title: 'Registrar newletter interna de la empresa',
+        route: 'EndMission',
+      },
+      {
+        title: 'Entrevista con el CEO de BNSystems',
+        route: 'EndMission',
+      }
+    ];
+    
     return (
-      <ImageBackground
-      source={require('../../../assets/mision1elections.png')}
-      style={{flex:1}}
-      resizeMode={'cover'}    
-      >
-       <View style={styles.viewBotones}>
-          <TouchableOpacity
-            style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('EndMission')}}
-          > 
-            <Text>Visitar laboratorio BNSystems</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('EndMission')}}
-          > 
-            <Text>Registrar newletter interna de la empresa</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.botonMision}
-            onPress={() => {this.props.navigation.navigate('EndMission')}}
-          > 
-            <Text>Entrevista con el CEO de BNSystems</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
+      <SafeAreaView style={misionStyle.SafeAreaView}>
+        <ImageBackground
+          source={require('../../../assets/mision1elections.png')}
+          style={misionStyle.imageBackground}
+          resizeMode={'cover'}    
+        >
+          <ButtonDrawer navigation={this.props.navigation}></ButtonDrawer>
+          <ElectionButtonMission rutas={routes} navigation={this.props.navigation} />
+        </ImageBackground>
+      </SafeAreaView>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  viewBotones: {
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  botonMision: {
-    backgroundColor: '#FFF',
-    width: 350,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 25
-  },
+const style = StyleSheet.create({
+  //Own styles
 });

@@ -1,17 +1,6 @@
 /*
   TODO:
 
-  - Do components for login
-  - See how to validate all the time if there is connection of everything (general flag?!?!?!)
-  - See how add drop-down on the left
-    + Insert photo of Google user with the googleName
-    + See profile in the bar on the left
-      + Show photo
-      + Show username
-      + Show email
-    + Access the missions
-    + ¿Logout Google?
-
   -----------------------------------
   DONE:
   + Put the Google icon in the start button
@@ -21,12 +10,22 @@
   + Delete of npm react-native-google-signin
   + Create config.js to global variables enviroment
   + Finish the Login of Google and Argency (error validation topic)
+  + Do components for login
+  + See how to validate all the time if there is connection of everything (general flag?!?!?!)
+  + See how add drop-down on the left
+    + Insert photo of Google user with the googleName
+    + See profile in the bar on the left
+      + Show photo
+      + Show username
+      + Show email
+    + Access the missions
+    + ¿Logout Google?
+  + https://youtu.be/lvY150aX5PM (to pass the navigation to the component EXAMPLE: <Header navigation={this.props.navigation})
+  + Refactor LoginScreen.js Rrmove the views that are not necessary
+  + See documentation of SocialIcon react-native-elements
 
   -------------------------------
   FIXME: 
-  - https://youtu.be/lvY150aX5PM (to pass the navigation to the component EXAMPLE: <Header navigation={this.props.navigation})
-  - Refactor LoginScreen.js Rrmove the views that are not necessary
-  - See documentation of SocialIcon react-native-elements
 
   -------------------------------
   DUDAS:
@@ -36,6 +35,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ImageBackground, TouchableOpacity, Image, Alert } from 'react-native';
 import Expo from 'expo';
+import { AsyncStorage } from 'react-native';
 
 //Config
 let envConfig = require('../../../../config');
@@ -48,6 +48,9 @@ export default class LoginScreen extends Component {
       googleName: '',
       googlePhotoUrl: '',
       googleUserEmail: '',
+      googleId: '',
+      googleToken: '',
+      googleserverAuthCode: '',
       argencySignedIn: false,
       argencyId: '',
       argencyDtStart: '',
@@ -56,12 +59,23 @@ export default class LoginScreen extends Component {
     }
   }
 
+  saveData = async () => {
+    try{
+      let saveTheData = JSON.stringify(this.state);
+      await AsyncStorage.setItem('dataLogin', saveTheData);
+    }
+    catch(error) {
+      console.log(`Error Async: ${error}`);
+    }
+  }
+
   signIn = async () => {
     Promise.all([this.signInGoogle(), this.isPermissionArgency()]).then(() => {
       if(this.state.googleSignedIn && this.state.argencySignedIn && this.state.getPassApp) {
         this.props.navigation.navigate('SelectMission')
+        this.saveData();
+
       }else{
-        let hola = 'Esto es una variable'
         Alert.alert(
           'LOGIN ERROR',
           this.errorControlLogin(),
@@ -82,13 +96,16 @@ export default class LoginScreen extends Component {
         //iosClientId: YOUR_CLIENT_ID_HERE,  <-- if you use iOS
         scopes: ["profile", "email"]
       })
-      
+
       if (result.type === "success") {
         this.setState({
           googleSignedIn: true,
-          googleName: result.user.googleName,
-          googlePhotoUrl: result.user.googlePhotoUrl,
-          googleUserEmail: result.user.email
+          googleName: result.user.name,
+          googlePhotoUrl: result.user.photoUrl,
+          googleUserEmail: result.user.email,
+          googleId: result.user.id,
+          googleToken: result.refreshToken,
+          googleserverAuthCode: result.serverAuthCode,
         })
 
       } else {
@@ -111,8 +128,8 @@ export default class LoginScreen extends Component {
           this.setState({
             argencySignedIn: true,
             argencyId: datos.id,
-            argencyDtStart: datos.argencyDtStart,
-            argencyDtLastAction: datos.argencyDtLastAction
+            argencyDtStart: datos.dtStart,
+            argencyDtLastAction: datos.dtLastAction
           });
         }else{
           console.log(`ERROR - Status: ${response.status}, OK: ${response.ok}, Status Text: ${response.statusText}`);
