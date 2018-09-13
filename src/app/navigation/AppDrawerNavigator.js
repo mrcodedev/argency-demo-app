@@ -5,6 +5,12 @@ import { createDrawerNavigator } from 'react-navigation';
 //Select Screen Missions
 import SelectMissionScreen from '../screens/Missions/SelectMission/SelectMissionScreen';
 
+//Profile
+import ProfileUserScreen from '../screens/Profile/ProfileUserScreen';
+
+//Pistas
+import PistasScreen from '../screens/Pistas/PistasScreen';
+
 //Mission One
 import MissionOneScreen from '../screens/Missions/MissionOne/MissionOneScreen';
 import MissionOneElectionScreen from '../screens/Missions/MissionOne/MissionOneElectionScreen';
@@ -21,11 +27,17 @@ import MissionThreeElectionScreen from '../screens/Missions/MissionThree/Mission
 import EndMissionScreen from '../screens/Missions/EndMission/EndMissionScreen';
 
 //
-import Sidebar from '../components/Sidebar/SidebarDefault';
+import Sidebar from '../components/SidebarDefault/SidebarDefault';
 
 const AppDrawerNavigator =  createDrawerNavigator ({
     SelectMission: {
         screen: SelectMissionScreen,
+    },
+    Profile: {
+        screen: ProfileUserScreen
+    },
+    Pistas: {
+        screen: PistasScreen
     },
     EndMission: {
         screen: EndMissionScreen

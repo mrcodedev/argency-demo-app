@@ -6,8 +6,6 @@ import {
     Image,
     AsyncStorage,
     SafeAreaView,
-    ScrollView,
-    DrawerItems,
     TouchableOpacity
 } from "react-native";
 
@@ -44,21 +42,32 @@ class SidebarDefault extends Component {
     render() {
         const routes = [
             {
-                title: 'Elige Misión',
-                route: 'EndMission',
+                title: 'Datos usuario',
+                route: 'Profile',
+            },
+            {
+                title: 'Pistas Misión',
+                route: 'Pistas',
+            },
+            {
+                title: 'Lista Misiones',
+                route: 'SelectMission',
+            },
+            {
+                title: 'Misión 1',
+                route: 'MissionOne',
+            },
+            {
+                title: 'Misión 2',
+                route: 'MissionTwo',
+            },
+            {
+                title: 'Misión 3',
+                route: 'MissionThree',
             },
         ];
 
         return (
-            // <View style={styles.container}>
-            //     <View style=>
-            //         <Image
-            //             source={{uri: this.state.dataLogin.googlePhotoUrl}}
-            //             style={styles.imageAvatar}
-            //         />
-            //         <Text style={styles.textName}>{this.state.dataLogin.googleName}</Text>
-            //     </View>
-            // </View>
             <SafeAreaView style={{flex:1}}>
                 <View style={{height: 220, backgroundColor: 'yellow'}}>
                     <View
@@ -79,15 +88,14 @@ class SidebarDefault extends Component {
                     style={{height: 400, backgroundColor: 'green'}}
                 >
                     {
-                        routes.map((e, i) => (
+                        routes.map((section, indexSection) => (
                             <TouchableOpacity 
-                                onPress={() => {this.props.navigation.navigate(e.route)}}
+                                onPress={() => {this.props.navigation.navigate(section.route)}}
                                 style={styles.link}
-                                key={i}
+                                key={indexSection}
                             >
-                                <Text>{e.title}</Text>
+                                <Text>{section.title}</Text>
                             </TouchableOpacity>
-
                         )
                     )}
                 </View>
