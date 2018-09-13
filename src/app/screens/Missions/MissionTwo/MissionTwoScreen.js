@@ -1,45 +1,32 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, View, KeyboardAvoidingView, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';
+
+//Styles
+import misionStyle from '../../../styles/Missions/MissionNumScreen.style';
 
 export default class MissionTwoScreen extends Component {
     render() {
         return (
-            <ImageBackground
-            source={require('../../../assets/fondomision2.png')}
-            style={{flex:1}}
-            resizeMode={'cover'}    
-            >
-            <View style={styles.viewEmpezarMision}>
-                <TouchableOpacity
-                style={styles.botonMision}
-                onPress={() => {this.props.navigation.navigate('MissionTwoElection')}}
-                > 
-                <Text style={styles.textoEmpezar}>EMPEZAR ></Text>
-                </TouchableOpacity>
-            </View>
-            </ImageBackground>
+            <SafeAreaView style={misionStyle.SafeAreaView}>
+                <ImageBackground
+                source={require('../../../assets/fondomision2.png')}
+                style={misionStyle.imageBackground}
+                resizeMode={'cover'}    
+                >
+                <View style={misionStyle.viewEmpezarMision}>
+                    <TouchableOpacity
+                    style={misionStyle.botonMision}
+                    onPress={() => {this.props.navigation.navigate('MissionTwoElection')}}
+                    > 
+                    <Text style={misionStyle.textoEmpezar}>EMPEZAR ></Text>
+                    </TouchableOpacity>
+                </View>
+                </ImageBackground>
+            </SafeAreaView>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    viewEmpezarMision: {
-        flex: 1,
-        width: '100%',
-        alignItems: 'flex-end',
-        justifyContent: 'flex-end',
-    },
-    botonMision: {
-        width: 100,
-        width: 200,
-        height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 25
-    },
-    textoEmpezar: {
-        color: 'white',
-        fontWeight: '700',
-        fontSize: 20
-    }
+    //Own Styles here
 });

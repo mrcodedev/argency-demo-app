@@ -21,7 +21,8 @@ export default class SelectMissionScreen extends Component {
         title: 'MISIÓN 3',
         route: 'MissionThree',
       }
-  ];
+    ];
+
     return (
       <SafeAreaView style={styles.SafeAreaView}>
         <ImageBackground
