@@ -13,7 +13,7 @@ class openButtonDrawer extends Component {
             name="md-menu"
             size={32}
             color="white"
-            style={{ padding: 15 ,marginTop: 15, paddingLeft: 10 }}
+            style={{ padding: 15 ,marginTop: 15, paddingLeft: 15 }}
             onPress={() => this.props.navigation.openDrawer()}
         />
         );

@@ -4,6 +4,9 @@ import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, SafeAreaView
 //Styles
 import misionStyle from '../../../styles/Missions/MissionNumScreen.style';
 
+//Button Drawer
+import ButtonDrawer from '../../../components/openButtonDrawer/openButtonDrawer';
+
 export default class MissionThreeScreen extends Component {
   render() {
     return (
@@ -13,6 +16,7 @@ export default class MissionThreeScreen extends Component {
         style={misionStyle.imageBackground}
         resizeMode={'cover'}    
         >
+          <ButtonDrawer navigation={this.props.navigation}></ButtonDrawer>
           <View style={misionStyle.viewEmpezarMision}>
             <TouchableOpacity
               style={misionStyle.botonMision}

@@ -12,15 +12,16 @@ export class ElectionButtonMission extends Component {
     render() {
         return (
             <View style={misionStyle.viewBotones}>
-                {this.props.rutas.map((section, index) => (
-                    <TouchableOpacity
-                        style={misionStyle.botonMision}
-                        key={index}
-                        onPress={() => {this.props.navigation.navigate(section.route)}}
-                    >
-                        <Text>{section.title}</Text>
-                    </TouchableOpacity>
-                ))
+                {
+                    this.props.rutas.map((section, index) => (
+                        <TouchableOpacity
+                            style={misionStyle.botonMision}
+                            key={index}
+                            onPress={() => {this.props.navigation.navigate(section.route)}}
+                        >
+                            <Text>{section.title}</Text>
+                        </TouchableOpacity>
+                    ))
                 }
             </View>
         );

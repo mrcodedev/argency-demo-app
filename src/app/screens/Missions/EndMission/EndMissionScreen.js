@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ImageBackground, SafeAreaView } from 'react-native';
 
+//Button Drawer
+import ButtonDrawer from '../../../components/openButtonDrawer/openButtonDrawer';
+
 export default class EndMissionScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.SafeAreaView}>
         <ImageBackground
         source={require('../../../assets/fin.png')}
-        style={{flex:1}}
+        style={styles.imageBackground}
         resizeMode={'cover'}    
         >
+          <ButtonDrawer navigation={this.props.navigation}></ButtonDrawer>
           <View style={styles.viewEmpezarMision}>
               <Text></Text>
           </View>
@@ -22,6 +26,9 @@ export default class EndMissionScreen extends Component {
 const styles = StyleSheet.create({
   SafeAreaView: {
     flex: 1,
+  },
+  imageBackground: {
+    flex: 1
   },
   viewEmpezarMision: {
       flex: 1,

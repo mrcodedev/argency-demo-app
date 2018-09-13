@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
 
-//Styles
+//Import Styles
 import misionStyle from '../../../styles/Missions/MissionNumElectionScreen.style';
 
+//Import Button Election Mission
 import ElectionButtonMission from '../../../components/electionButtonMission/electionButtonMission';
+
+//Button Drawer
+import ButtonDrawer from '../../../components/openButtonDrawer/openButtonDrawer';
 
 export default class MissionOneElectionScreen extends Component {
   constructor(props) {
@@ -30,10 +34,11 @@ export default class MissionOneElectionScreen extends Component {
     return (
       <SafeAreaView style={misionStyle.SafeAreaView}>
         <ImageBackground
-        source={require('../../../assets/mision1elections.png')}
-        style={misionStyle.imageBackground}
-        resizeMode={'cover'}    
+          source={require('../../../assets/mision1elections.png')}
+          style={misionStyle.imageBackground}
+          resizeMode={'cover'}    
         >
+          <ButtonDrawer navigation={this.props.navigation}></ButtonDrawer>
           <ElectionButtonMission rutas={routes} navigation={this.props.navigation} />
         </ImageBackground>
       </SafeAreaView>
