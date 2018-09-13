@@ -67,6 +67,12 @@ const AppDrawerNavigator =  createDrawerNavigator ({
     },
     EndMission: {
         screen: EndMissionScreen
+    },
+    Login: {
+        screen: LoginScreen,
+        navigationOptions: ({navigation}) => ({
+            drawerLockMode: 'locked-closed'
+        })
     }
 },
 {

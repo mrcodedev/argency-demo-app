@@ -37,7 +37,7 @@ class SidebarDefault extends Component {
 
     logOut = () => {
         console.log('TOY FUERA :D LOGUT');
-        this.props.navigation.navigate('LogOut')
+        this.props.navigation.navigate('Login')
     }
 
     componentWillMount() {
