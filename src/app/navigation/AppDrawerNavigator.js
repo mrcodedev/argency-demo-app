@@ -78,7 +78,8 @@ const AppDrawerNavigator =  createDrawerNavigator ({
 },
 {
     initialRouteName: 'SelectMission',
-    contentComponent: ({navigation}) => <Sidebar navigation={navigation} />
+    contentComponent: ({navigation}) => <Sidebar navigation={navigation} />,
+    drawerBackgroundColor: "transparent"
 });
 
 export default AppDrawerNavigator;

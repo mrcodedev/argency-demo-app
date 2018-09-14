@@ -124,31 +124,29 @@ export default SidebarDefault;
 const styles = StyleSheet.create({
     safeAreaContainer: {
         flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.7)',
     },
     profileArea: {
         height: 220, 
-        backgroundColor: 'yellow'
+
     },
     profilePhotoArea: {
         height: 150,
-        backgroundColor: 'red',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+
     },
     profilePhoto: {
         height: 100,
         width:100,
-        borderRadius: 60
+        borderRadius: 60,
     },
     usernameArea: {
-        height: 25,
-        backgroundColor: 'blue',
         alignItems: 'center',
         justifyContent: 'center'
     },
     butonSectionArea: {
         height: 400,
-        backgroundColor: 'green'
     },
     link: {
         padding: 15,
