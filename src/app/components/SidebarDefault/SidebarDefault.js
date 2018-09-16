@@ -6,7 +6,9 @@ import {
     Image,
     AsyncStorage,
     SafeAreaView,
-    TouchableOpacity
+    TouchableOpacity,
+    ImageBackground,
+    Alert
 } from "react-native";
 
 class SidebarDefault extends Component {
@@ -36,8 +38,25 @@ class SidebarDefault extends Component {
     }
 
     logOut = () => {
-        console.log('TOY FUERA :D LOGUT');
-        this.props.navigation.navigate('Login')
+        Alert.alert(
+            'Logout',
+            '¿Estás seguro de querer realizar Log Out?',
+            [
+                {
+                    text: 'No', 
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancelButtonLogOut'
+                },
+                {
+                    text: 'Si',
+                    onPress: () => {
+                        console.log('Acept Presed');
+                        this.props.navigation.navigate('Login')
+                    }
+                }
+            ]
+        )
+
     }
 
     componentWillMount() {
@@ -80,25 +99,31 @@ class SidebarDefault extends Component {
                 title: 'LogOut',
                 route: this.logOut,
                 isRoute: 0
-            }
+            },
         ];
 
         return (
             <SafeAreaView style={styles.safeAreaContainer}>
                 <View style={styles.profileArea}>
-                    <View
-                        style={styles.profilePhotoArea}
+                    <ImageBackground
+                        style={styles.imgBackgroundProfile}
+                        resizeMode='cover'
+                        source={require('../../../../assets/detective-background.jpeg')}
                     >
-                        <Image
-                            source={{uri: this.state.dataLogin.googlePhotoUrl}} 
-                            style={styles.profilePhoto}
-                        />
-                    </View>
-                    <View
-                        style={styles.usernameArea}
-                    >
-                        <Text>{this.state.dataLogin.googleName}</Text>
-                    </View>
+                        <View
+                            style={styles.profilePhotoArea}
+                        >
+                            <Image
+                                source={{uri: this.state.dataLogin.googlePhotoUrl}} 
+                                style={styles.profilePhoto}
+                            />
+                        </View>
+                        <View
+                            style={styles.usernameArea}
+                        >
+                            <Text style={styles.textUserName}>{this.state.dataLogin.googleName}</Text>
+                        </View>
+                    </ImageBackground>
                 </View>
                 <View
                     style={styles.butonSectionArea}
@@ -115,6 +140,16 @@ class SidebarDefault extends Component {
                         )
                     )}
                 </View>
+                <View
+                    style={styles.LogOutArea}
+                >
+                    <TouchableOpacity 
+                        onPress={this.logOut}
+                        style={styles.link}
+                    >
+                        <Text>LogOut</Text>
+                    </TouchableOpacity>
+                </View>
             </SafeAreaView>
         );
     }
@@ -122,36 +157,55 @@ class SidebarDefault extends Component {
 export default SidebarDefault;
 
 const styles = StyleSheet.create({
+    //Safearea Zone
     safeAreaContainer: {
         flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.7)',
     },
-    profileArea: {
-        height: 220, 
+    //Background Image
+    imgBackgroundProfile: {
+        flex: 1,
 
     },
+    //Profile Area: Photo + Username
+    profileArea: {
+        height: 220,
+
+    },
+    //Photo Area
     profilePhotoArea: {
         height: 150,
         alignItems: 'center',
         justifyContent: 'center',
 
     },
+    //Photo Profile
     profilePhoto: {
         height: 100,
         width:100,
         borderRadius: 60,
     },
+    //Username Area
     usernameArea: {
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
+    //Text User 
+    textUserName: {
+        fontSize: 20,
+        color: 'white'
+    },
+    //Button Section Area
     butonSectionArea: {
-        height: 400,
+        flex: 6
     },
+    //Links of Buttons
     link: {
         padding: 15,
-        borderBottomWidth: 2,
-        borderBottomColor: '#eee',
 
+    },
+    LogOutArea: {
+        flex: 1,
+        justifyContent: 'flex-end',
     }
+
 });
